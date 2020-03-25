@@ -90,11 +90,11 @@ class BookController {
     }
     
     var readBooks: [Book] {
-        books.filter { $0.hasBeenRead == true }
+        return books.filter { $0.hasBeenRead == true }
     }
     
     var unreadBooks: [Book] {
-        books.filter { $0.hasBeenRead == false}
+        return books.filter { $0.hasBeenRead == false}
     }
 }
 
