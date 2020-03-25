@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YEj-jY-zcb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YEj-jY-zcb">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,20 +18,24 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BookCell" id="QOV-L5-inV" customClass="BookTableViewCell" customModule="Reading_List" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="41"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="41.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QOV-L5-inV" id="fGX-bm-sqM">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="41"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="41.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MNV-T9-JkU">
-                                            <rect key="frame" x="20" y="0.0" width="336" height="42"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MNV-T9-JkU">
+                                            <rect key="frame" x="20" y="20" width="343" height="21.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="343" id="GgU-Rc-e9k"/>
+                                                <constraint firstAttribute="height" constant="21" id="hoL-h3-jsM"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DkU-CL-HvJ">
-                                            <rect key="frame" x="364" y="-4.5" width="50" height="50"/>
+                                            <rect key="frame" x="364" y="-4.5" width="50" height="50.5"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="50" id="E19-XE-uxe"/>
                                                 <constraint firstAttribute="width" constant="50" id="es9-TM-JZk"/>
@@ -45,6 +49,7 @@
                                     <constraints>
                                         <constraint firstItem="MNV-T9-JkU" firstAttribute="top" secondItem="fGX-bm-sqM" secondAttribute="top" constant="20" symbolic="YES" id="CEQ-LO-utq"/>
                                         <constraint firstAttribute="bottom" secondItem="MNV-T9-JkU" secondAttribute="bottom" id="D4E-da-Ral"/>
+                                        <constraint firstItem="MNV-T9-JkU" firstAttribute="top" secondItem="fGX-bm-sqM" secondAttribute="top" constant="20" id="OBM-3x-oSF"/>
                                         <constraint firstItem="DkU-CL-HvJ" firstAttribute="leading" secondItem="MNV-T9-JkU" secondAttribute="trailing" constant="1" id="S2j-Jg-pab"/>
                                         <constraint firstItem="MNV-T9-JkU" firstAttribute="leading" secondItem="fGX-bm-sqM" secondAttribute="leading" constant="20" symbolic="YES" id="hFU-YI-4Z2"/>
                                         <constraint firstAttribute="trailing" secondItem="DkU-CL-HvJ" secondAttribute="trailing" id="k3F-Mm-7Z2"/>
@@ -150,10 +155,10 @@
             <point key="canvasLocation" x="795.6521739130435" y="130.58035714285714"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="checked" width="50" height="50"/>
-    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="N7d-t8-fsC"/>
     </inferredMetricsTieBreakers>
+    <resources>
+        <image name="checked" width="50" height="50"/>
+    </resources>
 </document>

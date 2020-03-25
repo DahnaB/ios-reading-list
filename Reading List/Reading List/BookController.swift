@@ -36,7 +36,7 @@ class BookController {
             
         } catch {
             print("Error saving books: \(error)")
-        
+            
         }
     }
     
@@ -57,30 +57,30 @@ class BookController {
         }
     }
     
-    func createBook(title: String, reasonToRead: String, hasBeenRead: Bool) {
+    func Create(title: String, reasonToRead: String, hasBeenRead: Bool) {
         
         let book = Book(title: title, reasonToRead: reasonToRead)
         books.append(book)
         saveToPersistentStore()
     }
     
-    func deleteBook(title: String, reasonToRead: String, hasBeenRead: Bool) {
+    func Delete(title: String, reasonToRead: String, hasBeenRead: Bool) {
         let book = Book(title: title, reasonToRead: reasonToRead, hasBeenRead: hasBeenRead)
         if let index = books.index(of: book) {
             books.remove(at: index)
-        saveToPersistentStore()
+            saveToPersistentStore()
         }
     }
     
-    func updateHasBeenRead(for book: Book) {
-       
+    func Update(for book: Book) {
+        
         guard let bookIndex = books.firstIndex(of: book) else { return }
         
         books[bookIndex].hasBeenRead.toggle()
         saveToPersistentStore()
     }
     
-    func updateBooksOtherProperties(for book: Book, title: String, reasonToRead: String) {
+    func UpdateOtherProperties(for book: Book, title: String, reasonToRead: String) {
         
         guard let bookIndex = books.firstIndex(of: book) else { return }
         

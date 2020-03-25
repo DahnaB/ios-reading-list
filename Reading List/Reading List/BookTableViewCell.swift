@@ -8,16 +8,19 @@
 
 import UIKit
 
-class BookTableViewCell: UITableViewCell{
+class BookTableViewCell: UITableViewCell {
+
 
     var book: Book?
-    weak var delegate: BookTableViewCell?
+    
+    var delegate: BookTableViewCellDelegate?
 
     @IBOutlet weak var titleTextLabel: UILabel!
     @IBOutlet weak var checkBoxButton: UIButton!
     
     @IBAction func checkBoxStatus(_ sender: UIButton) {
         func toggleHasBeenRead(for cell: BookTableViewCell) {
+            delegate?.toggleHasBeenRead(for: self)
         }
     }
     
@@ -46,4 +49,17 @@ class BookTableViewCell: UITableViewCell{
         // Configure the view for the selected state
     }
 
+}
+
+extension BookTableViewCell: BookTableViewCellDelegate {
+    func toggleHasBeenRead(for cell: BookTableViewCell) {
+        guard let unwrappedBook = book else { return }
+        if unwrappedBook.hasBeenRead == false {
+            checkBoxButton.setImage(UIImage(named: "unchecked"), for: .normal)
+        } else {
+            checkBoxButton.setImage(UIImage(named: "checked"), for: .normal)
+        }
+    }
+    
+    
 }
